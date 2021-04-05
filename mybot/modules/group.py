@@ -1,7 +1,6 @@
 import os
 import random
 from time import time as gg
-import requests
 import time as dl
 from pyrogram import Client, emoji, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ChatPermissions
