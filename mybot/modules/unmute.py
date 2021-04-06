@@ -14,12 +14,6 @@ def unmute(client,message):
     user_id = message.reply_to_message.text.split()[0]
     user_name = message.reply_to_message.text.split()[7]
     rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-
-    if not message.reply_to_message:
-        message.reply_text("unmute aakkanel njan paranja message nu reply idu myre.")
-
-        return
-
     bot.unban_chat_member(chat_id, user_id)
     bot.send_chat_action(chat_id=chat_id, action="typing")
     bot.send_message(chat_id=chat_id, text=f"hello {rpk} we allowed you to send media here.")
