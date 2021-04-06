@@ -35,7 +35,7 @@ def welcome(client, message):
         disable_web_page_preview=True,
     )
 
-    bot.send_message(chat_id=admin_group, text=f"**NEW MUTE**\nx **User** : {rpk}\nx **Restriction: media, stickers\nx **Restriction Time: 48hrs\")
+    bot.send_message(chat_id=admin_group, text=f"**NEW MUTE**\nx **User** : {rpk}\nx **Restriction: media, stickers\nx **Restriction Time: 48hrs\nto ban/unmute reply to this message 👇🏻.")
     bot.send_message(chat_id=admin_group, text=f"{user_id} reply to this message to unmute {rpk}")
     
 
