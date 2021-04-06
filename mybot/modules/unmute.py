@@ -8,6 +8,7 @@ from mybot import bot
 
 chat_id = "-1001266612390" 
 unmute_rejex = r"unmute|Unmute"
+ban_rejex = r"ban|Ban"
 
 @bot.on_message(filters.chat("status_group_admins") & filters.regex(unmute_rejex))
 def unmute(client,message):
@@ -28,3 +29,15 @@ def copy(client,message):
     cc.copy(chat_id)
     dl.sleep(1)
     message.reply_text("😁 done")
+
+@bot.on_message(filters.chat("status_group_admins") & filters.regex(ban_rejex))
+def unmute(client,message):
+    user_id = message.reply_to_message.text.split()[0]
+    user_name = message.reply_to_message.text.split()[7]
+    rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+    bot.ban_chat_member(chat_id, user_id)
+    bot.send_chat_action(chat_id=chat_id, action="typing")
+    bot.send_message(chat_id=chat_id, text=f"Banned {rpk}.")
+    dl.sleep(1)
+    message.reply_text("♣️ user Banned.")
+    
