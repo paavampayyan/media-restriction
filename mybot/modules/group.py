@@ -26,7 +26,7 @@ def welcome(client, message):
     print(chat_id, user_id, user_name)
     rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
     bot.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=True), int(gg() + 172800))
-    m = message.reply_text(f"Sorry {rpk} 😕. As a security purposes i restrict you from sending media files to our group  up to next 48 hrs ✋🏻. contact group admin's if you have any queries.",
+    m = message.reply_text(f"Welcome to our group {rpk} ✨. As a security purposes i restrict you from sending media files to our group  up to next 48 hrs ✋🏻. contact group admin's if you have any queries.",
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("Adminlist", callback_data="admins {}")]
@@ -35,7 +35,7 @@ def welcome(client, message):
         disable_web_page_preview=True,
     )
 
-    bot.send_message(chat_id=admin_group, text=f"i resticted {rpk} media permissions.")
+    bot.send_message(chat_id=admin_group, text=f"**NEW MUTE**\nx **User** : {rpk}\nx **Restriction: media, stickers\nx **Restriction Time: 48hrs\")
     bot.send_message(chat_id=admin_group, text=f"{user_id} reply to this message to unmute {rpk}")
     
 
@@ -48,13 +48,13 @@ def welcome(client, message):
 def en(client, callback_query):
     callback_query.message.edit(
         "**Status Group Adminlist ⚜️**\n\n"
-        "⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰ \n\n"
+        "⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰\n\n"
         " ➲ @nousername_psycho\n"
         " ➲ @cyper666 \n"
         " ➲ @Komban_war\n"
         " ➲ @Sathan_Of_Telegram\n"
         " ➲ @voicemagic1\n\n"
-        "⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰",
+        "⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰⥰",
 
        reply_markup=InlineKeyboardMarkup(
             [
