@@ -25,7 +25,7 @@ def welcome(client, message):
     user_name = message.from_user.first_name
     print(chat_id, user_id, user_name)
     rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-    bot.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=True), int(gg() + 172800))
+    bot.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=True), int(gg() + 1800))
     m = message.reply_text(f"Welcome to our group {rpk} ✨. As a security purposes i restrict you from sending media files to our group  up to next 30 minutes ✋🏻. contact group admin's if you have any queries.",
         reply_markup=InlineKeyboardMarkup(
             [
